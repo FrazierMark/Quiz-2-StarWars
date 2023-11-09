@@ -30,7 +30,7 @@ def homepage():
 
 @app.route('/get_starwars_facts', methods=['GET', 'POST'])
 def starwars_search():
-    """Show a form to search for GIFs and show resulting GIFs from Tenor API."""
+    """Show results of Star Wars Search"""
         
     if request.method == 'POST':
         film_list = []
