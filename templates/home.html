@@ -1,13 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Quiz 2 Home</title>
-  </head>
-  <body>
-    <h1>Quiz 2 Routes</h1>
+{% extends 'base.html' %} {% block title %} Quiz 2 Home {% endblock %} {% block
+  content %}
+  <h1>Star Wars Search</h1>
+  <form action="/get_starwars_facts" method="POST">
+    <fieldset>
+      <legend>Get Star Wars Info:</legend>
+  
+      <label>
+        Which type of information would you like?
+  
+        <select name="category">
+          {% for category in starwars_categories %}
+          <option value="{{category}}">{{category}}</option>
+          {% endfor %}
+        </select>
+      </label>
 
-    <ul>
-      <li><a href="/compliments">Compliments</a></li>
-    </ul>
-  </body>
-</html>
+      <label>
+        Choose category index.
+  
+        <select name="index">
+          {% for index in indexes %}
+          <option value="{{index}}">{{index}}</option>
+          {% endfor %}
+        </select>
+      </label>
+  
+      <input type="submit" value="Get Star Wars Info!" />
+    </fieldset>
+  </form>
+  {% endblock %}
+  

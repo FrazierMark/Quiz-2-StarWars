@@ -1,0 +1,102 @@
+{% extends 'base.html' %} {% block title %} Quiz 2 Home {% endblock %} {% block
+    content %}
+    <h1>Star Wars Search Results</h1>
+
+    <fieldset>
+        <legend>Star Wars {{category}} Info:</legend>
+
+        {%if category == 'people'%}
+        
+        <section>
+            <ul>
+                <li>Name: {{starwars_data['name']}}</li>
+                <li>Height: {{starwars_data['height']}}</li>
+                <li>Mass: {{starwars_data['mass']}}</li>
+                <li>Hair Color: {{starwars_data['hair_color']}}</li>
+                <li>Eyes Color: {{starwars_data['eye_color']}}</li>
+                <li>Home World: {{home_world}}</li>
+                
+                <section>
+                    <h2>Appears in the following Films</h2>
+                <ul>
+                    {% for film in film_list %}
+                    <li>{{film}}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            </ul>
+        </section>
+        {%endif%}
+    
+        {%if category == 'planets'%}
+        <section>
+            <ul>
+                <li>Name: {{starwars_data['name']}}</li>
+                <li>Rotation Period: {{starwars_data['rotation_period']}}</li>
+                <li>Orbital Period: {{starwars_data['orbital_period']}}</li>
+                <li>Diameter: {{starwars_data['diameter']}}</li>
+                <li>Climate: {{starwars_data['climate']}}</li>
+                <li>Gravity: {{starwars_data['gravity']}}</li>
+                <li>Terrain: {{starwars_data['terrain']}}</li>
+                <li>Surface Water: {{starwars_data['surface_water']}}</li>
+                <li>Population: {{starwars_data['population']}}</li>
+            </ul>
+        </section>
+        {%endif%}
+    
+        {%if category == 'starships'%}
+        <section>
+            <ul>
+                <li>Name: {{starwars_data['name']}}</li>
+                <li>Model: {{starwars_data['model']}}</li>
+                <li>Manufacturer: {{starwars_data['manufacturer']}}</li>
+                <li>Cost in Credits: {{starwars_data['cost_in_credits']}}</li>
+                <li>Length: {{starwars_data['length']}}</li>
+                <li>Max Atmosphering Speed: {{starwars_data['max_atmosphering_speed']}}</li>
+                <li>Crew: {{starwars_data['crew']}}</li>
+                <li>Passengers: {{starwars_data['passengers']}}</li>
+            </ul>
+        </section>
+        {%endif%}
+    
+        {%if category == 'vehicles'%}
+        <section>
+            <ul>
+                <li>Name: {{starwars_data['name']}}</li>
+                <li>Model: {{starwars_data['model']}}</li>
+                <li>Manufacturer: {{starwars_data['manufacturer']}}</li>
+                <li>Cost in Credits: {{starwars_data['cost_in_credits']}}</li>
+                <li>Length: {{starwars_data['length']}}</li>
+                <li>Max Atmosphering Speed: {{starwars_data['max_atmosphering_speed']}}</li>
+                <li>Crew: {{starwars_data['crew']}}</li>
+                <li>Passengers: {{starwars_data['passengers']}}</li>
+            </ul>
+        </section>
+        {%endif%}
+    
+        {%if category == 'species'%}
+        <section>
+            <ul>
+                <li>Name: {{starwars_data['name']}}</li>
+                <li>Classification: {{starwars_data['classification']}}</li>
+                <li>Designation: {{starwars_data['designation']}}</li>
+            </ul>
+        </section>
+        {%endif%}
+    
+        {%if category == 'films'%}
+        <section>
+            <ul>
+                <li>Title: {{starwars_data['title']}}</li>
+                <li>Episode ID: {{starwars_data['episode_id']}}</li>
+                <li>Director: {{starwars_data['director']}}</li>
+                <li>Producer: {{starwars_data['producer']}}</li>
+                <li>Release Date: {{starwars_data['release_date']}}</li>
+            </ul>
+        </section>
+        {%endif%}
+
+      </fieldset>    
+    
+    {% endblock %}
+    
