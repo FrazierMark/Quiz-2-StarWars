@@ -5,7 +5,6 @@ import requests
 
 app = Flask(__name__)
 
-
 STARWARS_URL = 'https://swapi.py4e.com/api/'
 pp = PrettyPrinter(indent=4)
 
